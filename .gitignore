@@ -1,0 +1,10 @@
+# Runtime output (generated)
+output/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
