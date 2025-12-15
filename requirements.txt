@@ -1,0 +1,6 @@
+numpy
+trimesh
+networkx
+scipy
+Pillow
+PyQt5
