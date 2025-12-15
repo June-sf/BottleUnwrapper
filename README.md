@@ -19,14 +19,19 @@
 
 ```
 BottleUnwrapperSystem/
-├── main.py          # 命令行主入口，处理流程调度
-├── gui.py           # 图形用户界面，基于PyQt5开发
-├── scripts/         # 功能脚本目录
-│   ├── preprocess.py    # 预处理：自动对齐与瓶身提取
-│   ├── seam_extract.py  # 接缝提取算法
-│   ├── seam2uv.py       # Blender圆柱投影UV展开
-│   └── uv_repack.py     # 纹理重绘与映射
-└── README.md        # 项目说明文档
+├── input/                 # 示例输入数据（供用户测试）
+├── output/                # 输出目录（运行生成，仓库中为空）
+│   └── .gitkeep
+├── scripts/
+│   ├── preprocess.py      # 自动对齐与瓶身提取
+│   ├── seam_extract.py    # 接缝提取算法
+│   ├── seam2uv.py         # Blender 圆柱投影 UV 展开
+│   └── uv_repack.py       # 纹理重绘与映射
+├── main.py                # 命令行主入口
+├── gui.py                 # 图形用户界面（PyQt5）
+├── requirements.txt       # Python 依赖列表
+├── README.md              # 项目说明文档
+└── LICENSE
 ```
 
 ## 技术依赖
@@ -37,13 +42,14 @@ BottleUnwrapperSystem/
 - **trimesh**：3D网格处理库
 - **numpy**：数值计算库
 - **scipy**：科学计算库
+- 所有 Python 依赖已整理至 requirements.txt。
 
 ## 安装说明
 
 ### 1. 安装Python依赖
 
 ```bash
-pip install numpy scipy trimesh pyqt5
+pip install -r requirements.txt
 ```
 
 ### 2. 安装Blender
@@ -142,7 +148,7 @@ python main.py input.obj --texture texture.jpg --outdir output
 
 ## 输出文件说明
 
-处理完成后，输出目录将包含以下文件：
+处理完成后，`outout/`输出目录将包含以下文件：
 
 - `xxx_preprocessed.obj`：预处理后的瓶身模型
 - `xxx_seam.txt`：提取的接缝坐标
@@ -159,7 +165,7 @@ python main.py input.obj --texture texture.jpg --outdir output
 
 ## 技术支持
 
-如需技术支持或有任何问题，请提交Issue或联系开发团队。
+如需技术支持或有任何问题，请提交Issue。
 
 ## 许可证
 
