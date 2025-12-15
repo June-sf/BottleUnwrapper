@@ -1,5 +1,6 @@
-# Runtime output (generated)
-output/
+# Ignore generated files in output
+output/*
+!output/.gitkeep
 
 # Python cache
 __pycache__/
